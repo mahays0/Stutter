@@ -83,7 +83,6 @@ private static void stut (BufferedReader inFile) throws IOException
       }
       checkDupes (linecnt);
       linecnt++;
-
    }
 }  // end Stut
 
@@ -103,6 +102,7 @@ private static void checkDupes (int line)
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
    }
+   prevWord = curWord;
    curWord = "";
 }  // end checkDupes
 
