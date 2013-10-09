@@ -16,9 +16,7 @@ class Stutter
   // Class variables used in multiple methods.
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
-  private static char delimits [] =
-          {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
-           '&', '{', '}', '\\'}; // First char in list is a tab
+  private static char delimits[] = "\t ,.!-+=;:?&{}\\".toCharArray();
 
 //************************************************
 // main parses the arguments, decides if stdin
