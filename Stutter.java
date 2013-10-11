@@ -106,8 +106,8 @@ private static void checkDupes (int line)
    } // end if
    else{
 	// TODO: set prevWord
-   }
-   curWord = "";
+   } // end else
+   curWord = ""; // set curWord
 }  // end checkDupes
 
 //************************************************
