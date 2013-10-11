@@ -102,17 +102,9 @@ private static void checkDupes (int line)
 	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
-<<<<<<< HEAD
    }
    prevWord = curWord;
    curWord = "";
-=======
-   } // end if
-   else{
-	// TODO: set prevWord
-   } // end else
-   curWord = ""; // set curWord
->>>>>>> 88013fddea2bc9bfec99a65b69ee3e9594413c0f
 }  // end checkDupes
 
 //************************************************
