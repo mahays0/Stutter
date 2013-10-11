@@ -11,6 +11,8 @@
 ********************************************************* */
 import java.io.*;
 
+//DUmmy COmmit
+//Dummy Commit 2
 class Stutter
 {
   // Class variables used in multiple methods.
@@ -100,8 +102,12 @@ private static void checkDupes (int line)
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
+	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
+   } // end if
+   else{
+	// TODO: set prevWord
    }
    prevWord = curWord;
    curWord = "";
