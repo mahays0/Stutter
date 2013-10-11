@@ -11,6 +11,7 @@
 ********************************************************* */
 import java.io.*;
 
+//DUmmy COmmit
 class Stutter
 {
   // Class variables used in multiple methods.
@@ -105,7 +106,7 @@ private static void checkDupes (int line)
                         prevWord+ " " + curWord);
    } // end if
    else{
-	// TODO: set prevWord
+	   prevWord = curWord;
    } // end else
    curWord = ""; // set curWord
 }  // end checkDupes
