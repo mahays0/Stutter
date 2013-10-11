@@ -14,6 +14,7 @@ import java.io.*;
 class Stutter
 {
   // Class variables used in multiple methods.
+  private static int repeat = 0;
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
   private static char delimits [] =
@@ -96,16 +97,18 @@ private static void checkDupes (int line)
 {
    if (lastdelimit)
    return; // already checked, keep skipping
-   
+ 
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+	repeat++;
       System.out.println ("Repeated word on line " + line + ": " +
-                        prevWord+ " " + curWord);
+                        prevWord+ " " + curWord + ". Number of repetitions: "
+			+ repeat);
    } // end if
    else{
-	// TODO: set prevWord
+	prevWord = curWord;
+	repeat = 0;
    } // end else
    curWord = ""; // set curWord
 }  // end checkDupes
