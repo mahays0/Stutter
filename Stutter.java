@@ -113,7 +113,7 @@ private static void checkDupes (int line)
 	// TODO: set prevWord
    } // end else
    curWord = ""; // set curWord
-
+//this is a dummy comment
 }  // end checkDupes
 
 //************************************************
