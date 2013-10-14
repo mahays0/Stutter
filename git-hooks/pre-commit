@@ -1,0 +1,31 @@
+#!/usr/bin/python
+from subprocess import Popen, PIPE
+import sys
+
+def run(command):
+    print "ran"
+    p = Popen(command.split(), stdout=PIPE, stderr=PIPE)
+    p.wait()
+    return p.returncode, p.stdout.read().strip().split(), p.stderr.read()
+
+
+def precommit():
+  _, files_modified, _= run("git diff --diff-filter=ACRM master --name-only")
+  i=1
+  for fname in files_modified:
+    print fname
+    if (fname.find(".java") < 0):
+      continue
+    file = open(fname)
+    while i==1:
+       line = file.readline()
+       if not line:
+          break
+       elif len(line)>80:
+          print("Commit failed: Line greater than 80 characters")
+          print(line)
+          print("The above is the offending line")
+          return 1
+    return 0
+
+sys.exit(precommit())
