@@ -1,0 +1,15 @@
+#!/bin/sh
+set -x
+STR=$(git diff --name-only --cached)
+FILES=$(grep '*.java' "$STR")
+for i in $FILES; do
+	LINE=$(grep ^.\{81,\} $i)
+	echo "File: $i"
+	echo "Found Line: $LINE"
+	if [ expr length $LINE > 0 ]
+	then
+		echo "Line found with over 80 characters. Ensure that code conforms to conventions."
+		echo $LINE
+		exit 1
+	fi
+done
