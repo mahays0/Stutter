@@ -11,6 +11,7 @@
 ********************************************************* */
 import java.io.*;
 
+// This is not a valid line. A line longer than 80 characters is invalid and should be caught by the hook. 
 class Stutter
 {
   // Class variables used in multiple methods.
