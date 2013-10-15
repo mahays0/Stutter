@@ -1,7 +1,8 @@
 // Introduction to Software Testing
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 2, section 2.5, page 80
-
+////////////////////////////////////////////////////////////////////////////////////////
+                    ///;oauisd oiuasogu aou gdsouig oiu          aougouia opsui goiu aosg
 /** *****************************************************
 // Stutter checks for repeat words in a text file.
 // It prints a list of repeat words, by line number.
@@ -100,7 +101,8 @@ private static void checkDupes (int line)
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+	// FIXME: only print at end of repeated sequence. 
+    // print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
 

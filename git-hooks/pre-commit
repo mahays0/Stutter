@@ -1,0 +1,13 @@
+#!/bin/sh
+
+Files=$(git diff --diff-filter=ACRM master --name-only | grep ".java")
+
+for fname in $Files
+    do
+         if (awk 'length($0) > 80' $fname) > 0 
+         then    
+             awk 'length($0) > 80' $fname
+             echo "This line in $fname has more than 80 characters"
+             exit 1
+         fi
+done
