@@ -13,6 +13,7 @@ import java.io.*;
 
 class Stutter
 {
+//characters on this line will be over 80 characters long, asdasdawsdawwasadwadawdasadwada
   // Class variables used in multiple methods.
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
@@ -99,7 +100,7 @@ private static void checkDupes (int line)
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+ // FIXME: only print at end of repeated sequence. print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
    }
