@@ -99,7 +99,6 @@ private static void stut (BufferedReader inFile) throws IOException
  * if they are the same.
  ************************************************
  * @param line the line number of the current input stream
- * @return void
  */
 private static void checkDupes (int line)
 {
