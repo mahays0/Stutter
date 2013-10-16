@@ -59,6 +59,7 @@ public static void main (String[] args) throws IOException
 * Every time an end of word is found, checkDupes()
 * is called to see if it is the same as the
 * previous word.
+* @param inFile        the input stream
 */
 private static void stut (BufferedReader inFile) throws IOException
 {
