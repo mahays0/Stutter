@@ -14,6 +14,7 @@ import java.io.*;
 ********************************************************* */
 public class Stutter
 {
+//characters on this line will be over 80 characters long, asdasdawsdawwasadwadawdasadwada
   // Class variables used in multiple methods.
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
@@ -54,14 +55,15 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
-//************************************************
+/**
+* Stut() reads all lines in the input stream, and
+* finds words. Words are defined as being surrounded
+* by delimiters as defined in the delimits[] array.
+* Every time an end of word is found, checkDupes()
+* is called to see if it is the same as the
+* previous word.
+* @param inFile        the input stream
+*/
 private static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
@@ -102,7 +104,7 @@ private static void checkDupes (int line)
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+ // FIXME: only print at end of repeated sequence. print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
    }
