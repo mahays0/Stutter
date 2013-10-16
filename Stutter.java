@@ -1,3 +1,5 @@
+import java.io.*;
+
 /**
  * <p>Stutter checks for repeat words in a text file.
  * It prints a list of repeat words, by line number.
@@ -10,8 +12,6 @@
  * @author Jeff Offutt
  * @since June 1989 (in C), Java version March 2003 
  */
-import java.io.*;
-
 class Stutter
 {
   // Class variables used in multiple methods.
