@@ -2,16 +2,17 @@
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 2, section 2.5, page 80
 
-/** *****************************************************
-// Stutter checks for repeat words in a text file.
-// It prints a list of repeat words, by line number.
-// Stutter will accept standard input or a list
-// of file names.
- *  Jeff Offutt, June 1989 (in C), Java version March 2003 
-********************************************************* */
 import java.io.*;
 
-class Stutter
+/**
+ * Stutter checks for repeat words in a text file.
+ * It prints a list of repeat words, by line number.
+ * Stutter will accept standard input or a list
+ * of file names.
+ * @author Jeff Offutt
+ * @since June 1989 (in C), Java version March 2003 
+********************************************************* */
+public class Stutter
 {
   // Class variables used in multiple methods.
   private static boolean lastdelimit = true;
@@ -20,10 +21,12 @@ class Stutter
           {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
            '&', '{', '}', '\\'}; // First char in list is a tab
 
-//************************************************
-// main parses the arguments, decides if stdin
-// or a file name, and calls Stut().
-//************************************************
+/**
+ * Main parses the arguments, decides if stdin
+ * or a file name, and calls Stut().
+ * @param args Filename of file to check. If no argument, reads from stdin.
+ * 
+*/
 public static void main (String[] args) throws IOException
 {
    String fileName;
