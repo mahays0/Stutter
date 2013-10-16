@@ -2,19 +2,15 @@
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 2, section 2.5, page 80
 
-/** *****************************************************
-// Stutter checks for repeat words in a text file.
-// It prints a list of repeat words, by line number.
-// Stutter will accept standard input or a list
-// of file names.
- *  Jeff Offutt, June 1989 (in C), Java version March 2003 
-********************************************************* */
 import java.io.*;
 
-//DUmmy COmmit
-//Dummy Commit 2
-//Dummy Commit 3
-/*0123456789112345678921234567893123456789412345678951234567896123456789712345678981234567899123456789*/
+/**
+ * Stutter checks for repeat words in a text file.
+ * It prints a list of repeat words, by line number.
+ * Stutter will accept standard input or a list
+ * of file names.
+ * @author Jeff Offutt, June 1989 (in C), Java version March 2003 
+ */
 class Stutter
 {
   // Class variables used in multiple methods.
@@ -24,10 +20,11 @@ class Stutter
           {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
            '&', '{', '}', '\\'}; // First char in list is a tab
 
-//************************************************
-// main parses the arguments, decides if stdin
-// or a file name, and calls Stut().
-//************************************************
+/**
+ * main parses the arguments, decides if stdin
+ * or a file name, and calls Stut().
+ * @param args the command line arguments passed to Stutter
+ */
 public static void main (String[] args) throws IOException
 {
    String fileName;
@@ -55,14 +52,15 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
-//************************************************
+/**
+ * Stut() reads all lines in the input stream, and
+ * finds words. Words are defined as being surrounded
+ * by delimiters as defined in the delimits[] array.
+ * Every time an end of word is found, checkDupes()
+ * is called to see if it is the same as the
+ * previous word.
+ * @param inFile the file being read to look for duplicates
+ */
 private static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
