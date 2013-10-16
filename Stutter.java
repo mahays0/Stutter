@@ -11,7 +11,7 @@
 ********************************************************* */
 import java.io.*;
 
-class Stutter
+public class Stutter
 {
 //characters on this line will be over 80 characters long, asdasdawsdawwasadwadawdasadwada
   // Class variables used in multiple methods.
@@ -87,11 +87,16 @@ private static void stut (BufferedReader inFile) throws IOException
    }
 }  // end Stut
 
-//************************************************
-// checkDupes() checks to see if the globally defined
-// curWord is the same as prevWord and prints a message
-// if they are the same.
-//************************************************
+
+/** 
+ ************************************************
+ * checkDupes() checks to see if the globally defined
+ * curWord is the same as prevWord and prints a message
+ * if they are the same.
+ ************************************************
+ * @param line the line number of the current input stream
+ * @return void
+ */
 private static void checkDupes (int line)
 {
    if (lastdelimit)
@@ -108,9 +113,14 @@ private static void checkDupes (int line)
    curWord = "";
 }  // end checkDupes
 
-//************************************************
-// Checks to see if a character is a delimiter.
-//************************************************
+
+/** 
+************************************************
+* Checks to see if a character is a delimiter.
+************************************************
+ * @param C a character from the current input stream
+ * @return  true if C is a delimiter, false otherwise
+*/
 private static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
