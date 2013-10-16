@@ -93,6 +93,9 @@ private static void stut (BufferedReader inFile) throws IOException
  * checkDupes() checks to see if the globally defined
  * curWord is the same as prevWord and prints a message
  * if they are the same.
+ * 
+ * @param curWord	the current word
+ * @param prevWord	the previous word
  */
 private static void checkDupes (int line)
 {
