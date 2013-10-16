@@ -21,10 +21,10 @@ class Stutter
           {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
            '&', '{', '}', '\\'}; // First char in list is a tab
 
-//************************************************
-// main parses the arguments, decides if stdin
-// or a file name, and calls Stut().
-//************************************************
+/**
+* main parses the arguments, decides if stdin
+* or a file name, and calls Stut().
+*/
 public static void main (String[] args) throws IOException
 {
    String fileName;
@@ -52,14 +52,14 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
-//************************************************
+/**
+* Stut() reads all lines in the input stream, and
+* finds words. Words are defined as being surrounded
+* by delimiters as defined in the delimits[] array.
+* Every time an end of word is found, checkDupes()
+* is called to see if it is the same as the
+* previous word.
+*/
 private static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
