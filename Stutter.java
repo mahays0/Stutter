@@ -89,11 +89,11 @@ private static void stut (BufferedReader inFile) throws IOException
    }
 }  // end Stut
 
-//************************************************
-// checkDupes() checks to see if the globally defined
-// curWord is the same as prevWord and prints a message
-// if they are the same.
-//************************************************
+/**
+ * checkDupes() checks to see if the globally defined
+ * curWord is the same as prevWord and prints a message
+ * if they are the same.
+ */
 private static void checkDupes (int line)
 {
    if (lastdelimit)
