@@ -116,9 +116,13 @@ private static void checkDupes (int line)
    curWord = "";
 }  // end checkDupes
 
-//************************************************
-// Checks to see if a character is a delimiter.
-//************************************************
+/**
+* Checks to see if a character is a delimiter.
+*
+* @param  c is the character being sent into the function to be checked if it is in the delimit array
+* @return value of false returns if c is not in the delimits array
+*         value of true is returned if it the character is contained in the array
+*/
 private static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
