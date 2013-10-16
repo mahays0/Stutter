@@ -9,7 +9,7 @@
 // of file names.
  *  Jeff Offutt, June 1989 (in C), Java version March 2003 
 ********************************************************* */
-import java.io.*;
+import java.io.*; 
 
 class Stutter
 {
@@ -49,13 +49,15 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
+/**
+ * Stut() reads all lines in the input stream, and
+ * finds words. Words are defined as being surrounded
+ * by delimiters as defined in the delimits[] array.
+ * Every time an end of word is found, checkDupes()
+ * is called to see if it is the same as the
+ * previous word.
+ * @param inFile File to read and check for duplicate words
+ */
 //************************************************
 private static void stut (BufferedReader inFile) throws IOException
 {
@@ -85,11 +87,12 @@ private static void stut (BufferedReader inFile) throws IOException
    }
 }  // end Stut
 
-//************************************************
-// checkDupes() checks to see if the globally defined
-// curWord is the same as prevWord and prints a message
-// if they are the same.
-//************************************************
+/**
+ * checkDupes() checks to see if the globally defined
+ * curWord is the same as prevWord and prints a message
+ * if they are the same.
+ * @param line Line to check for duplicate words.
+ */
 private static void checkDupes (int line)
 {
    if (lastdelimit)
@@ -108,9 +111,11 @@ private static void checkDupes (int line)
    curWord = ""; // set curWord
 }  // end checkDupes
 
-//************************************************
-// Checks to see if a character is a delimiter.
-//************************************************
+/**
+ * Checks to see if a character is a delimiter.
+ * @param C character to check
+ * @return true if C is a delimiter, false otherwise
+ */
 private static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
