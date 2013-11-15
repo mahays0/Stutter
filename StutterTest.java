@@ -13,7 +13,12 @@ public class StutterTest {
 	 * 
 	 */
 	@Test
-	public void isDelimitNull(){
+	public void isDelimitNullTrue(){
+		boolean result = Stutter.isDelimit((char)0);
+		assertTrue(result);
+	}
+	@Test
+	public void isDelimitNullFalse(){
 		boolean result = Stutter.isDelimit((char)0);
 		assertFalse(result);
 	}
