@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -12,6 +13,9 @@ import org.junit.Test;
 public class StutterTest {
 	ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	PrintStream original;
+	Stutter newStut = new Stutter();//This is in place to get 100% coverage
+									//doesn't provide any meaning to tests since all 
+									//methods are static
 	@Test
 	public final void testMainStdIn() throws IOException{
 		original = System.out;
@@ -19,7 +23,7 @@ public class StutterTest {
 		
 		outContent.reset();
 		String args[] = {null};
-		String input = "This line has no stutter\n"+"this line has stutter stutter\n";
+		String input = "This line has no stutter\n"+"this line has stutter stutter\n\n";
 		System.setIn(new ByteArrayInputStream(input.getBytes()));
 		Stutter.main(args);
 		assertEquals("Repeated word on line 2: stutter stutter\n", outContent.toString());
@@ -46,6 +50,5 @@ public class StutterTest {
 		assertEquals("Repeated word on line 2: stutter stutter\n", outContent.toString());
 		System.setOut(original);
 	}
-
-
+	
 }

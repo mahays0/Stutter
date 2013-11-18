@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Stutter.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StutterTest (1) (Nov 15, 2013 8:00:05 PM)</a> &gt; <a href="../../index.html" class="el_group">Stutter</a> &gt; <a href="../index.html" class="el_bundle">Stutter</a> &gt; <a href="index.html" class="el_package">default</a> &gt; <span class="el_source">Stutter.java</span></div><h1>Stutter.java</h1><pre class="source lang-java linenums">// Introduction to Software Testing
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Stutter.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="right"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">StutterTest (1) (Nov 17, 2013 8:06:27 PM)</a> &gt; <a href="../../index.html" class="el_group">Stutter</a> &gt; <a href="../index.html" class="el_bundle">Stutter</a> &gt; <a href="index.html" class="el_package">default</a> &gt; <span class="el_source">Stutter.java</span></div><h1>Stutter.java</h1><pre class="source lang-java linenums">// Introduction to Software Testing
 // Authors: Paul Ammann &amp; Jeff Offutt
 // Chapter 2, section 2.5, page 80
 
@@ -12,7 +12,7 @@ import java.io.*;
  * @author Jeff Offutt
  * @since June 1989 (in C), Java version March 2003 
 */
-<span class="nc" id="L15">public class Stutter</span>
+<span class="fc" id="L15">public class Stutter</span>
 {
 //characters on this line will be over 80 characters long, asdasdawsdawwasadwadawdasadwada
   // Class variables used in multiple methods.
@@ -102,8 +102,8 @@ private static void stut (BufferedReader inFile) throws IOException
  */
 private static void checkDupes (int line)
 {
-<span class="pc bpc" id="L105" title="1 of 2 branches missed.">   if (lastdelimit)</span>
-<span class="nc" id="L106">   return; // already checked, keep skipping</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">   if (lastdelimit)</span>
+<span class="fc" id="L106">   return; // already checked, keep skipping</span>
    
 <span class="fc" id="L108">   lastdelimit = true;</span>
 <span class="fc bfc" id="L109" title="All 2 branches covered.">   if (curWord.equals(prevWord))</span>
@@ -133,4 +133,4 @@ private static boolean isDelimit (char C)
 }
 
 } // end class Stutter
-</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>StutterTest (1) (Nov 15, 2013 8:00:05 PM)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.6.3.201306030806</span>StutterTest (1) (Nov 17, 2013 8:06:27 PM)</div></body></html>
