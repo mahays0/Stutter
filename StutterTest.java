@@ -32,25 +32,34 @@ public class StutterTest {
 	 * Input can be stdin
 	 * Expected result: true
 	 */
-	 @Test
-     public void testManualInput() throws IOException{
-             String input = "test test notatest";
-             InputStream in = new ByteArrayInputStream(input.getBytes());
-             System.setIn(in);
-             //if not passing a file
-             Stutter.main(new String[] {null});
-             assertTrue(true);
-     }
+	@Test
+     	public void testManualInput() throws IOException{
+        	String input = "test test notatest";
+                InputStream in = new ByteArrayInputStream(input.getBytes());
+                System.setIn(in);
+                //if not passing a file
+                Stutter.main(new String[] {null});
+               assertTrue(true);
+     	}
+     	/*
+     	 *Null input
+     	 */
+     	@Test
+     	public void testInput() throws IOException{
+        	String input = null;
+        	Stutter.main(new String[] {input});
+        	assertTrue(true);
+     	}
      	/*
      	 * Check dup needs to get a value
      	 */
      	@Test
-     public void testCheckDup(){
-	     String line="test test test";
-	     InputStream in = new ByteArrayInputStream(line.getBytes());
-             System.setIn(in);
-	     Stutter.checkDupes(0);
-	     assertFalse(false);
-     }
+     	public void testCheckDup(){
+		String line="test test test";
+	        InputStream in = new ByteArrayInputStream(line.getBytes());
+                System.setIn(in);
+	        Stutter.checkDupes(0);
+	        assertFalse(false);
+     	}
 	
 }
