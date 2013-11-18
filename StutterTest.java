@@ -1,56 +1,45 @@
 import static org.junit.Assert.*;
-
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
-
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-@RunWith(JUnit4.class)
+
 public class StutterTest {
-
 	/**
-	 * isDelimit should tolerate the null character
-	 * Expected result:false
-	 * 
+	 * isDelimit should tolerate the null character.
+	 * Expected result: false
 	 */
 	@Test
-	public void isDelimitNullTrue(){
-		boolean result = Stutter.isDelimit((char)0);
-		assertTrue(result);
-	}
-	@Test
-	public void isDelimitNullFalse(){
-		boolean result = Stutter.isDelimit((char)0);
+	public void isDelimitNull(){
+		boolean result = Stutter.isDelimit((char) 0);
 		assertFalse(result);
 	}
-	@Before
-	public void mainstuff(){
-		
-	
-	String into = "This is my new new thing";
-	InputStream is = new ByteArrayInputStream(Charset.forName("UTF-16").encode(into).array());
-	System.setIn(is);
-	}
-	
+	/**
+	 * Input can be a file
+	 * Expected result: true
+	 */
 	@Test
-	public void checkDupesTest(){
-		
-		Stutter.isDelimit((char) '+');
-		Stutter.isDelimit((char) 'b');
-		Stutter.checkDupes((int)0);	
-		
+	public void testInputFile() throws IOException{
+		String input="input.txt";
+		InputStream in=new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		//if passing a file
+		Stutter.main(new String[] {});
+		assertTrue(true);
 	}
-	
-	
-	
-	
-	
+	/**
+	 * Input can be stdin
+	 * Expected result: true
+	 */
+	 @Test
+     public void testManualInput() throws IOException{
+             String input = "test test notatest";
+             InputStream in = new ByteArrayInputStream(input.getBytes());
+             System.setIn(in);
+             //if not passing a file
+             Stutter.main(new String[] {null});
+             assertTrue(true);
+     }
 	
 }
