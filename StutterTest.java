@@ -41,5 +41,17 @@ public class StutterTest {
              Stutter.main(new String[] {null});
              assertTrue(true);
      }
+     	/*
+     	 * Check dup needs to get a value
+     	 */
+     
+     	@Test
+     public void testCheckDup(){
+	     String line="test test test";
+	     InputStream in = new ByteArrayInputStream(line.getBytes());
+             System.setIn(in);
+			Stutter.checkDupes(0);
+			assertFalse(false);
+		}
 	
 }
