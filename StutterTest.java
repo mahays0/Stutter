@@ -50,8 +50,8 @@ public class StutterTest {
 	     String line="test test test";
 	     InputStream in = new ByteArrayInputStream(line.getBytes());
              System.setIn(in);
-			Stutter.checkDupes(0);
-			assertFalse(false);
-		}
+	     Stutter.checkDupes(0);
+	     assertFalse(false);
+     }
 	
 }
