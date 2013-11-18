@@ -44,7 +44,6 @@ public class StutterTest {
      	/*
      	 * Check dup needs to get a value
      	 */
-     
      	@Test
      public void testCheckDup(){
 	     String line="test test test";
