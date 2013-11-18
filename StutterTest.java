@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.io.BufferedReader;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -22,4 +24,14 @@ public class StutterTest {
 		boolean result = Stutter.isDelimit((char)0);
 		assertFalse(result);
 	}
+	@Test
+	public void checkDupesTest(){
+		Stutter.checkDupes((int)0);	
+	}
+	
+	
+	
+	
+	
+	
 }

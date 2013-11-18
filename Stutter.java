@@ -61,7 +61,7 @@ public static void main (String[] args) throws IOException
  * previous word.
  * @param inFile the file being read to look for duplicates
  */
-private static void stut (BufferedReader inFile) throws IOException
+static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
    char c;
@@ -97,7 +97,7 @@ private static void stut (BufferedReader inFile) throws IOException
  * @param curWord	the current word
  * @param prevWord	the previous word
  */
-private static void checkDupes (int line)
+static void checkDupes (int line)
 {
    if (lastdelimit)
    return; // already checked, keep skipping
@@ -123,7 +123,7 @@ private static void checkDupes (int line)
 * @return value of false returns if c is not in the delimits array
 *         value of true is returned if it the character is contained in the array
 */
-private static boolean isDelimit (char C)
+static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
    if (C == delimits [i])
