@@ -103,6 +103,10 @@ private static void checkDupes (int line)
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
    }
+  else 
+{
+prevWord= curWord;
+}
    curWord = "";
 }  // end checkDupes
 
