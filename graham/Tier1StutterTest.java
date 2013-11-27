@@ -10,7 +10,8 @@
  *  Jeff Offutt, June 1989 (in C), Java version March 2003 
 ********************************************************* */
 import java.io.*;
-
+class FileReader{}
+class BufferedReader{}
 class Stutter
 {
   // Class variables used in multiple methods.
