@@ -1,12 +1,11 @@
-
 public class BufferedReader {
 
 
-	public BufferedReader(FileReader myFile) {
+	public BufferedReader(InputStreamReader inputStreamReader) {
 		// TODO Auto-generated constructor stub
 	}
 
-	public BufferedReader(InputStreamReader inputStreamReader) {
+	public BufferedReader(FileReader myFile) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -14,7 +13,5 @@ public class BufferedReader {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 
 }
