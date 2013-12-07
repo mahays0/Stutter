@@ -11,7 +11,7 @@ public class StutterTest {
 	 * Expected result: false
 	 */
 	@Test
-	public void isDelimitNull(){
+	public void testisDelimit(){
 		boolean result = Stutter.isDelimit((char) 0);
 		assertFalse(result);
 	}
