@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "doing pre-commit check"
+for i in $(git diff --name-only | grep *.java)
+do
+	line=$(grep '.\{81\}' $i)
+	if [ -n "$line" ]; then
+    	echo "$line is over 80 character"
+    	exit 1
+	fi
+done

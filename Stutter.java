@@ -2,17 +2,19 @@
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 2, section 2.5, page 80
 
-/** *****************************************************
-// Stutter checks for repeat words in a text file.
-// It prints a list of repeat words, by line number.
-// Stutter will accept standard input or a list
-// of file names.
- *  Jeff Offutt, June 1989 (in C), Java version March 2003 
-********************************************************* */
 import java.io.*;
 
-class Stutter
+/**
+ * Stutter checks for repeat words in a text file.
+ * It prints a list of repeat words, by line number.
+ * Stutter will accept standard input or a list
+ * of file names.
+ * @author Jeff Offutt
+ * @since June 1989 (in C), Java version March 2003 
+*/
+public class Stutter
 {
+//characters on this line will be over 80 characters long, asdasdawsdawwasadwadawdasadwada
   // Class variables used in multiple methods.
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
@@ -20,10 +22,12 @@ class Stutter
           {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
            '&', '{', '}', '\\'}; // First char in list is a tab
 
-//************************************************
-// main parses the arguments, decides if stdin
-// or a file name, and calls Stut().
-//************************************************
+/**
+ * Main parses the arguments, decides if stdin
+ * or a file name, and calls Stut().
+ * @param args Filename of file to check. If no argument, reads from stdin.
+ * 
+*/
 public static void main (String[] args) throws IOException
 {
    String fileName;
@@ -51,14 +55,15 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
-//************************************************
+/**
+* Stut() reads all lines in the input stream, and
+* finds words. Words are defined as being surrounded
+* by delimiters as defined in the delimits[] array.
+* Every time an end of word is found, checkDupes()
+* is called to see if it is the same as the
+* previous word.
+* @param inFile        the input stream
+*/
 private static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
@@ -83,15 +88,18 @@ private static void stut (BufferedReader inFile) throws IOException
       }
       checkDupes (linecnt);
       linecnt++;
-
    }
 }  // end Stut
 
-//************************************************
-// checkDupes() checks to see if the globally defined
-// curWord is the same as prevWord and prints a message
-// if they are the same.
-//************************************************
+
+/** 
+ ************************************************
+ * checkDupes() checks to see if the globally defined
+ * curWord is the same as prevWord and prints a message
+ * if they are the same.
+ ************************************************
+ * @param line the line number of the current input stream
+ */
 private static void checkDupes (int line)
 {
    if (lastdelimit)
@@ -100,19 +108,22 @@ private static void checkDupes (int line)
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+ // FIXME: only print at end of repeated sequence. print # repetitions in a row.
       System.out.println ("Repeated word on line " + line + ": " +
                         prevWord+ " " + curWord);
-   } // end if
-   else{
-	// TODO: set prevWord
-   } // end else
-   curWord = ""; // set curWord
+   }
+   prevWord = curWord;
+   curWord = "";
 }  // end checkDupes
 
-//************************************************
-// Checks to see if a character is a delimiter.
-//************************************************
+
+/** 
+************************************************
+* Checks to see if a character is a delimiter.
+************************************************
+ * @param C a character from the current input stream
+ * @return  true if C is a delimiter, false otherwise
+*/
 private static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
