@@ -2,28 +2,33 @@
 // Authors: Paul Ammann & Jeff Offutt
 // Chapter 2, section 2.5, page 80
 
-/** *****************************************************
-// Stutter checks for repeat words in a text file.
-// It prints a list of repeat words, by line number.
-// Stutter will accept standard input or a list
-// of file names.
- *  Jeff Offutt, June 1989 (in C), Java version March 2003 
-********************************************************* */
 import java.io.*;
 
-class Stutter
+/**
+* The (@code Stutter) class identifies repeated words in a text file. 
+* Then, it will print out the repeated words it finds. (@code Stutter) will 
+* accept standard input or a list of file names. 
+*
+* @author Paul Ammann
+* @author Jeff Offutt
+*/
+
+public class Stutter
 {
   // Class variables used in multiple methods.
+  private static int repeat = 0;
   private static boolean lastdelimit = true;
   private static String curWord = "", prevWord = "";
   private static char delimits [] =
           {'	', ' ', ',', '.', '!', '-', '+', '=', ';', ':', '?',
            '&', '{', '}', '\\'}; // First char in list is a tab
 
-//************************************************
-// main parses the arguments, decides if stdin
-// or a file name, and calls Stut().
-//************************************************
+/**
+*  Parses the arguments, decides if stdin or a file name, and calls 
+*  (@code Stut())
+*
+*  @param args  command line arguments
+*/
 public static void main (String[] args) throws IOException
 {
    String fileName;
@@ -51,14 +56,15 @@ public static void main (String[] args) throws IOException
    stut (inFile);
 }
 
-//************************************************
-// Stut() reads all lines in the input stream, and
-// finds words. Words are defined as being surrounded
-// by delimiters as defined in the delimits[] array.
-// Every time an end of word is found, checkDupes()
-// is called to see if it is the same as the
-// previous word.
-//************************************************
+/**
+* Reads in the characters one by one from the input stream, identifying
+* 	the words in the stream, being delimiated by those defined in 
+*	(@code delimits[]) array. This will call checkDupes() when it does 
+*	find a word
+*
+* @param inFile  a buffer of input to be read in
+*
+*/
 private static void stut (BufferedReader inFile) throws IOException
 {
    String inLine;
@@ -87,32 +93,50 @@ private static void stut (BufferedReader inFile) throws IOException
    }
 }  // end Stut
 
-//************************************************
-// checkDupes() checks to see if the globally defined
-// curWord is the same as prevWord and prints a message
-// if they are the same.
-//************************************************
+/**
+* Checks to see if the globally define curWord is the same as prevWord and 
+* prints a message if they are the same. 
+* 
+* @param line  line number that the stream is currently on
+*
+*/
 private static void checkDupes (int line)
 {
    if (lastdelimit)
    return; // already checked, keep skipping
-   
+ 
    lastdelimit = true;
    if (curWord.equals(prevWord))
    {
-	// FIXME: only print at end of repeated sequence. print # repetitions in a row.
+	repeat++;
       System.out.println ("Repeated word on line " + line + ": " +
+<<<<<<< HEAD
                         prevWord+ " " + curWord);
+   }
+  else 
+{
+prevWord= curWord;
+}
+   curWord = "";
+=======
+                        prevWord+ " " + curWord + ". Number of repetitions: "
+			+ repeat);
    } // end if
    else{
-	// TODO: set prevWord
+	prevWord = curWord;
+	repeat = 0;
    } // end else
    curWord = ""; // set curWord
+>>>>>>> c1b3076211ad17e3349e577a5b0a46b617255d92
 }  // end checkDupes
 
-//************************************************
-// Checks to see if a character is a delimiter.
-//************************************************
+/**
+*  Checks to see if a character is a delimiter
+*
+*  @param C  the current character
+*
+*  @return True if chracter is a delimiter. False otherwise
+*/
 private static boolean isDelimit (char C)
 {
    for (int i = 0; i < delimits.length; i++)
